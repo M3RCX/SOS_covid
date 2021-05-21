@@ -1,0 +1,21 @@
+<mat-sidenav-container class="container-nav">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport fixedTopGap="64" fixedBottomGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>
+                Início
+            </a>
+            <a mat-list-item routerLink="/login">
+                <i class="material-icons">lock</i>
+                Login
+            </a>
+            <a mat-list-item routerLink="/agendamento">
+                <i class="material-icons">event</i>
+                Agendamento
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="nav-content P6">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
