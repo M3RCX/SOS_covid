@@ -1,5 +1,5 @@
 <mat-sidenav-container class="container-nav">
-    <mat-sidenav class="sidenav" mode="push" opened fixedInViewport fixedTopGap="64" fixedBottomGap="64">
+    <mat-sidenav class="sidenav" mode="push" #sidenav fixedInViewport fixedTopGap="64" fixedBottomGap="64">
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/">
                 <i class="material-icons">home</i>
@@ -15,7 +15,11 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class="nav-content P6">
-        <router-outlet></router-outlet>
+    <mat-sidenav-content class="nav-content P-6">
+        <router-outlet>
+            <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+        </router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
