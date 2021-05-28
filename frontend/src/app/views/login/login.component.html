@@ -6,12 +6,12 @@
         Sistema para agendamento de vacinas em casa, faça seu login!
     </mat-card-subtitle>
 </mat-card>
-<mat-grid-list cols="2" rowHeight="2:2">
+<mat-grid-list cols="2" rowHeight="36.5rem">
     <mat-grid-tile>
     
         <div class="dvider1 col-4 offset-2">
             <span><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
-            <button mat-raised-button (click)="navigateToCadastro()" class="btn--cadastro" >Cadastre-se</button>
+            <button mat-raised-button color="primary" (click)="navigateToCadastro()" class="btn--cadastro" >Cadastre-se</button>
         </div>
     </mat-grid-tile>
     <mat-grid-tile>
@@ -20,17 +20,27 @@
             <form>
                 <mat-form-field>
                     <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input  matInput type="text" class="" id="LoginCpf" placeholder="Insira seu CPF">
+                    <input type="text" matInput [formControl]="cpfFormControl" placeholder="Ex. 000.000.000-00">
+                    <mat-error *ngIf="cpfFormControl.hasError('text') && !cpfFormControl.hasError('required')">
+                    Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="cpfFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
                 
                 <mat-form-field>
                     <mat-label for="loginPassword" class="">Senha</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <input matInput [formControl]="senhaFormControl" [type]="hide ? 'password' : 'text'">
                     <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
+                    <mat-error *ngIf="senhaFormControl.hasError('required')">
+                        senha is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
-                <button type="submit" mat-raised-button  class="" >Login</button>
+
+                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
             </form>
         </div>
     </mat-grid-tile>

@@ -15,6 +15,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table'  
+import { FlexLayoutModule } from '@angular/flex-layout'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 //import das pages e components
 import { HomeComponent } from './views/home/home.component';
@@ -23,6 +28,7 @@ import { CreateAgendamentoComponent } from './components/agendamento/create-agen
 import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';
+
 
 
 
@@ -50,7 +56,12 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     MatButtonModule,
     MatInputModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    FlexLayoutModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

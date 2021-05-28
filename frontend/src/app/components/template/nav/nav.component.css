@@ -5,3 +5,11 @@
 .sidenav a{
     color: #fff;
 }
+
+.sidenav-icon{
+    position: fixed;
+    bottom: 75px;
+    right: 8px;
+    z-index: 2;
+}
+
