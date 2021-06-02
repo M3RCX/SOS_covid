@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class AgendamentoService {
 
-  baseUrl: "http://localhost:3001/agendamentos"
+  baseUrl= "http://localhost:3001/agendamentos"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
    
