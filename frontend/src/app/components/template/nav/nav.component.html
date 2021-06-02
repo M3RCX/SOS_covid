@@ -1,7 +1,7 @@
-<mat-sidenav-container class="container-nav">
+<mat-sidenav-container  class="container-nav">
     <mat-sidenav  class="sidenav" mode="over" #sidenav fixedInViewport >
-        <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
+        <mat-nav-list  class="nav-list">
+            <a  mat-list-item routerLink="/">
                 <i class="material-icons">home</i>
                 Início
             </a>
@@ -15,7 +15,7 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class="nav-content P-6">
+    <mat-sidenav-content color="" class="nav-content P-6">
         <router-outlet flex="100">
             <button mat-mini-fab color="primary"  class="sidenav-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
                 <mat-icon>menu</mat-icon>

@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table'  
 import { FlexLayoutModule } from '@angular/flex-layout'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //import das pages e components
@@ -61,7 +62,8 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     ReactiveFormsModule,
     MatTableModule,
     FlexLayoutModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
