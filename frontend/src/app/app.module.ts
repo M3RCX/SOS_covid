@@ -20,6 +20,10 @@ import { MatTableModule } from '@angular/material/table'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 
 
 //import das pages e components
@@ -63,7 +67,9 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     MatTableModule,
     FlexLayoutModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
