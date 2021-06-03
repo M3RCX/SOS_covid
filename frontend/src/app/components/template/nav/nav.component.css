@@ -1,0 +1,19 @@
+.sidenav{
+    width: 200px;
+}
+
+.sidenav a{
+    
+}
+
+.sidenav-icon{
+    position: fixed;
+    bottom: 75px;
+    right: 8px;
+    z-index: 2;
+}
+
+.container-nav{
+    height: 100vh;
+}
+
