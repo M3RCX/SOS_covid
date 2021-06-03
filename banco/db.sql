@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `sos`.`clinica`
+-- Table `sos`.`clinicas`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `sos`.`clinicas` ;
 
