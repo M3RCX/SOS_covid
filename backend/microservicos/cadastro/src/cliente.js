@@ -1,6 +1,9 @@
 const db = require('./db');
 
 const cliente = db.sequelize.define('cliente', {
+    idcliente: {
+        type: db.Sequelize.INTEGER, autoIncrement: true, primaryKey: true
+    },
     nome: {
         type: db.Sequelize.STRING
     },

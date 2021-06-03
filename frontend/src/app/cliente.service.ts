@@ -17,7 +17,7 @@ export class ClienteService {
         };
         this.httpClient.post<{
             clientes: Cliente []
-        }>('http://localhost:3000/login', cliente )
+        }>('http://localhost:5000/login', cliente )
     }
 
 
@@ -36,7 +36,7 @@ export class ClienteService {
             senha: senha
         }
 
-        this.httpClient.post<{mensagem: string}>('http://localhost:3000/cadastro-cliente', cliente)
+        this.httpClient.post<{mensagem: string}>('http://localhost:1000/cadastro-cliente', cliente)
 
     }
 
