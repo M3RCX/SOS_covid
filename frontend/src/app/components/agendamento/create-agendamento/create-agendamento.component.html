@@ -1,4 +1,24 @@
-<p>create-agendamento works!</p>
+<mat-card>
+    <mat-card-title>
+        Agendamento de vacina
+    </mat-card-title>
+    <mat-card-subtitle>
+        agende sua vacina
+    </mat-card-subtitle>
 
-<button mat-raised-button color="primary" (click)="createAgendamento()">Confirmar</button>
-<button mat-raised-button color="secundary" (click)="cancelarAgendamento()">Cancelar</button>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Data do agendamento</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>      
+        </form>
+            
+    </mat-card-content>
+    
+    <button mat-raised-button color="primary" (click)="createAgendamento()">Confirmar</button>
+    <button mat-raised-button color="secundary" (click)="cancelarAgendamento()">Cancelar</button>
+
+</mat-card>
