@@ -1,20 +1,33 @@
-const express = require ('express');
+const express = require('express');
+const cliente = require('../../cadastro/src/cliente');
 const app = express();
 app.use(express.json());
 
-app.post('', function (req, res){
-    let usuario = //QUERY select
-    let senha = // QUERY select
- 
-    if (usuario == //USUÁRIO QUE VIRÁ DA QUERY){
-        if (senha == //SENHA QUE VIRÁ DA QUERY) {
-            res.end("Seja bem-vindo" + usuario);
-        } else {
-            res.end("Senha incorreto!")
-        }
-    } else {
-        res.end ("Usuário não existe!");
-    }
+app.use( 
+    (req, res, next) => {
+
+        res.setHeader('Access-Control-Allow-Origin', "*");
+        res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+
+        next();
+});
+
+
+app.post('/login', function (req, res) {
+    let cpf = req.body.cpf; //CPF vindo do formulário de login
+    let senha = req.body.senha; //Senha vinda do formulário de login
+
+    
+        cliente.findAll(cpf, senha).then((clientes) => {
+            for (int = 0; i < clientes.lenght; i++) {
+                if (cpf == clientes[i].cpf && senha == clientes[i].senha) {
+                    console.log('Bem-Vindo');
+                } else {
+                    res.end("Usuário ou senha não existe")
+                }
+            }
+        })
 });
 
 app.listen(5000);

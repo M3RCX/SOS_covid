@@ -1,17 +1,17 @@
 const db = require('./db');
 
-const cliente = db.sequelize.define('clinica', {
+const clinica = db.sequelize.define('clinica', {
     nome: {
         type: db.Sequelize.STRING
     },
     cnpj: {
-        type: db.Sequelize.INT
+        type: db.Sequelize.STRING
     },
     email: {
         type: db.Sequelize.STRING
     },
     telefone: {
-        type: db.Sequelize.INT
+        type: db.Sequelize.STRING
     },
     cep: {
         type: db.Sequelize.STRING
