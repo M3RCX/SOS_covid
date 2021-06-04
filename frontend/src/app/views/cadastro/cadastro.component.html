@@ -7,58 +7,58 @@
     </div>
 
     <div class="container">
-      <form action="localhost:1000/clientes" method="POST">
+      <form action="http://localhost:1000/cadastro-cliente" method="POST">
         <div class="row">
           <div class="form-group col-md-6 col-12">
             <label for="nome">Nome Completo</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome Sobrenome" />
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome Sobrenome" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="cpf">CPF</label>
-            <input type="cpf" class="form-control" id="cpf" placeholder="XXXXXXXXXXX" />
+            <input type="cpf" class="form-control" name="cpf" id="cpf" placeholder="XXXXXXXXXXX" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="nome@email.com" />
+            <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="telefone">Telefone</label>
-            <input type="telefone" class="form-control" id="telefone" placeholder="XXXXXXXXXXX" />
+            <input type="telefone" class="form-control" name="telefone" id="telefone" placeholder="XXXXXXXXXXX" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="cep">CEP</label>
-            <input type="cep" class="form-control" id="cep" placeholder="XXXXXXXX" maxlength="10"
+            <input type="cep" class="form-control" name="cep" id="cep" placeholder="XXXXXXXX" maxlength="10"
               onblur="pesquisacep(this.value);" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="rua">Rua</label>
-            <input type="text" class="form-control" id="rua" placeholder="Nome da Rua" />
+            <input type="text" class="form-control" name="rua" id="rua" placeholder="Nome da Rua" />
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Nome da Bairro" />
+            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Nome da Bairro" />
           </div>
           <div class="form-row form-container__numero">
             <div class="form-group col-md-6 col-12">
               <label for="numero">Numero</label>
-              <input type="numero" class="form-control" id="numero" placeholder="000" />
+              <input type="numero" class="form-control" name="numero" id="numero" placeholder="000" />
             </div>
 
             <div class="form-group col-md-6 col-12">
               <label for="numero">Complemento</label>
-              <input type="numero" class="form-control" id="numero" placeholder="000" />
+              <input type="text" class="form-control" name="complemento" id="complemento" placeholder="000" />
             </div>
           </div>
 
           <div class="form-group col-md-6 col-12">
             <label for="senha">Senha</label>
-            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" />
+            <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" />
           </div>
 
           <div class="form-group col-md-6 col-12">
