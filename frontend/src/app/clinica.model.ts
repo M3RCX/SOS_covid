@@ -1,4 +1,6 @@
   export interface Clinica {
+  //?opcional
+    idCliente?: number, 
     nome: string, 
     cnpj: number, 
     email: string, 
