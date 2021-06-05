@@ -34,8 +34,8 @@ export class CadastroComponent implements OnInit {
         form.value.cep,
         form.value.rua,
         form.value.bairro,
+        form.value.complemento,
         form.value.numero,
-        
         form.value.senha
         );
         console.log(this.clienteService.adicionarCliente)
