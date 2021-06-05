@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cliente = require("./cliente");
 const clinica = require("./clinica");
+const sequelize = require('./db');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -29,7 +30,8 @@ app.get('/cadastro-clinica', function (req, res) { //caminho do formulário de c
   res.render('cadastro-clinica');
 });
 
-app.post('/cadastro-cliente', function (req, res) {
+app.post('/cliente-cadastrado', function (req, res) {
+  console.log(cliente);
   cliente.create({
     nome: req.body.nome,
     cpf: req.body.cpf,
@@ -44,7 +46,7 @@ app.post('/cadastro-cliente', function (req, res) {
     res.redirect('/http://localhost:4200'); //Redireciona o usuário cadastrado para a tela inicial
     console.log("Usuário cadastrado");
   }).catch(function (erro) {
-    console.log("Não foi possível cadastrar o usuário" + erro);
+    console.log("Não foi possível cadastrar o usuário " + erro);
   });
 });
 

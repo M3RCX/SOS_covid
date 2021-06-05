@@ -7,7 +7,7 @@
     </div>
 
     <div class="container">
-      <form action="http://localhost:1000/cadastro-cliente" method="POST">
+      <form (submit)="adicionarCliente(clienteForm)" #clienteForm="ngForm">
         <div class="row">
           <div class="form-group col-md-6 col-12">
             <label for="nome">Nome Completo</label>
@@ -66,10 +66,10 @@
             <input type="password" class="form-control" id="confirmarsenha" placeholder="Digite sua senha" />
           </div>
         </div>
-        <button mat-raised-button color="primary" type="submit" color="primary" class="last-object">
-          Cadastrar
-        </button>
       </form>
+      <button mat-raised-button color="primary" type="submit" color="primary" class="last-object">
+        Cadastrar
+      </button>
     </div>
   </div>
 
