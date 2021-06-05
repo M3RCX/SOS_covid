@@ -10,6 +10,17 @@ import { Router } from '@angular/router'
 })
 export class CadastroComponent implements OnInit {
 
+    nome: string = ''
+    cpf: string = ''
+    email: string = ''
+    telefone: string = ''
+    cep: string = ''
+    rua: string = ''
+    bairro: string = ''
+    numero: string = ''
+    senha: string = ''
+    complemento: string = ''
+
   constructor (public clienteService: ClienteService,
     private router: Router) {
 
@@ -21,7 +32,7 @@ export class CadastroComponent implements OnInit {
   navigateToHome(): void{
     this.router.navigate(['/']);
   }
-
+ 
     
     adicionarCliente(form: NgForm) {
       console.log("esta me acionando")
@@ -36,8 +47,18 @@ export class CadastroComponent implements OnInit {
         form.value.bairro,
         form.value.complemento,
         form.value.numero,
+        form.value.complemento,
         form.value.senha
         );
-        console.log(this.clienteService.adicionarCliente)
+        console.log(form.value.nome,
+          form.value.cpf,
+          form.value.email,
+          form.value.telefone,
+          form.value.cep,
+          form.value.rua,
+          form.value.bairro,
+          form.value.numero,
+          form.value.complemento,
+          form.value.senha)
       }
   }
