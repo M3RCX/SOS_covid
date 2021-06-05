@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 //import dos modulos
@@ -33,9 +33,15 @@ import { CreateAgendamentoComponent } from './components/agendamento/create-agen
 import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
+import { AgendamentoRead2Component } from './components/agendamento/agendamento-read2/agendamento-read2.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common'
 
-
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -48,6 +54,8 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     CreateAgendamentoComponent,
     LoginComponent,
     CadastroComponent,
+    AgendamentoReadComponent,
+    AgendamentoRead2Component
     
   ],
   imports: [
@@ -69,9 +77,14 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     MatSnackBarModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-br'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
