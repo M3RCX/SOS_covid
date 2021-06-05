@@ -21,7 +21,7 @@ export class ClienteService {
     }
 
 
-    adicionarCliente (nome: string, cpf: string, email: string, telefone: string, cep: string, rua: string, bairro: string, numero: string, /*complemento: string*/ senha: string) {
+    adicionarCliente (nome: string, cpf: string, email: string, telefone: string, cep: string, rua: string, bairro: string, numero: string, complemento: string, senha: string) {
 
         const cliente: Cliente = {
             nome: nome,
@@ -32,7 +32,7 @@ export class ClienteService {
             rua: rua,
             bairro: bairro,
             numero: numero,
-            //complemento: complemento,
+            complemento: complemento,
             senha: senha
         }
 

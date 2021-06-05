@@ -7,5 +7,6 @@
     rua: string,
     bairro: string,
     numero: string,
+    complemento: string,
     senha: string
 }
