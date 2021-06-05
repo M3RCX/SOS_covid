@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs'; // RxJS 
+import { Subject } from 'rxjs'; // RxJS
 import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente.model';
 import { Clinica } from './clinica.model'
@@ -40,7 +40,7 @@ export class ClienteService {
             rua: rua,
             bairro: bairro,
             numero: numero,
-            //complemento: complemento,
+            complemento: complemento,
             senha: senha
         }
 
@@ -62,8 +62,8 @@ export class ClienteService {
             senha: senha
         }
 
-        this.httpClient.post<{mensagem: string}>('http://localhost:3000/cadastro-clinica', clinica)
-    
+        this.httpClient.post<{mensagem: string}>('http://localhost:1000/cadastro-clinica', clinica)
+
     }
 /*
       //Método para que outros componentes possam observar p 'listaClientesAtualizada'

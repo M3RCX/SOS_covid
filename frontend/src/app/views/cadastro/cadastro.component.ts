@@ -19,15 +19,17 @@ export class CadastroComponent implements OnInit {
   tiles: Tile[] = [
     {text: 'Onteste', cols: 1, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 5, color: 'lightgreen'},
-    
+
   ];
 
-  constructor(public clienteService: ClienteService) { }
+  constructor (public clienteService: ClienteService) {
+
+  }
 
   ngOnInit(): void {
   }
 
-/*  adicionarCliente(form: NgForm) {
+  adicionarCliente(form: NgForm) {
 
     this.clienteService.adicionarCliente(
       //Nome, fone e email são parâmetros eles estão dentro do parênteses
@@ -39,8 +41,9 @@ export class CadastroComponent implements OnInit {
       form.value.rua,
       form.value.bairro,
       form.value.numero,
+      form.value.complemento,
       form.value.senha
     );
-  }*/
+  }
 
 }

@@ -35,4 +35,7 @@ const cliente = db.sequelize.define('clientes', {
 
 cliente.sync({force: true});
 
+/*cliente.sync({
+    force: true
+})*/
 module.exports = cliente;
