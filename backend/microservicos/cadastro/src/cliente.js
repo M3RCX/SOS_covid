@@ -2,7 +2,9 @@ const db = require('./db');
 
 const cliente = db.sequelize.define('clientes', {
     idcliente: {
-       type: db.Sequelize.INTEGER, autoIncrement: true, primaryKey: true
+        type: db.Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
     nome: {
         type: db.Sequelize.STRING
@@ -33,9 +35,12 @@ const cliente = db.sequelize.define('clientes', {
     }
 })
 
-cliente.sync({force: true});
+for (i = 0; i = 0; i++) {
+    if (i < 1) {
+        cliente.sync({
+            force: true
+        });
+    }
+}
 
-/*cliente.sync({
-    force: true
-})*/
 module.exports = cliente;

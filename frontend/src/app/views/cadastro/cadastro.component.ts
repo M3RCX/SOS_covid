@@ -47,7 +47,6 @@ export class CadastroComponent implements OnInit {
         form.value.bairro,
         form.value.complemento,
         form.value.numero,
-        form.value.complemento,
         form.value.senha
         );
         console.log(form.value.nome,

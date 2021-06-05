@@ -29,19 +29,27 @@ app.post('/login', function (req, res, next) {
                     console.log("Usuário ou senha não existe")
                 }
             }
+        }) 
+        cliente.findAll({where:{ cpf: cpf}}).then(dados => {
+            res.status(200).json({
+                mensagem: "Tudo Ok",
+                clientes: dados
+            });
         }).catch(function (erro) {
             console.log("Não foi possível consultar o banco" + erro);
         });
+
+       
 });
 
-
-app.get('/login-consulta', function (req, res, next) {
+/*
+app.get('/login', function (req, res, next) {
     cliente.findAll().then(dados => {
         res.status(200).json({
             mensagem: "Tudo Ok",
             clientes: dados
         });
     })
-})
+})*/
 
 app.listen(5000);
