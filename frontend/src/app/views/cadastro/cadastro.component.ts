@@ -21,6 +21,8 @@ export class CadastroComponent implements OnInit {
     senha: string = ''
     complemento: string = ''
 
+    
+
   constructor (public clienteService: ClienteService,
     private router: Router) {
 
@@ -35,11 +37,14 @@ export class CadastroComponent implements OnInit {
  
     
     adicionarCliente(form: NgForm) {
+      var formCpf = form.value.cpf.replace(/[^\d]+/g,'')
+      var formCep = form.value.cep.replace(/[^\d]+/g,'')
+      var formTel = form.value.telefone.replace(/[^\d]+/g,'')
       console.log("esta me acionando")
       this.clienteService.adicionarCliente(
         //Nome, fone e email são parâmetros eles estão dentro do parênteses
         form.value.nome,
-        form.value.cpf,
+        formCpf,
         form.value.email,
         form.value.telefone,
         form.value.cep,
@@ -49,15 +54,6 @@ export class CadastroComponent implements OnInit {
         form.value.complemento,
         form.value.senha
         );
-        console.log(form.value.nome,
-          form.value.cpf,
-          form.value.email,
-          form.value.telefone,
-          form.value.cep,
-          form.value.rua,
-          form.value.bairro,
-          form.value.numero,
-          form.value.complemento,
-          form.value.senha)
+        console.log(formCpf, formCep, formTel)
       }
   }

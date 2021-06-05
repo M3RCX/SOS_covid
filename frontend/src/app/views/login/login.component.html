@@ -20,7 +20,7 @@
             <form>
                 <mat-form-field>
                     <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" matInput [formControl]="cpfFormControl" placeholder="Ex. 000.000.000-00">
+                    <input type="text" matInput [formControl]="cpfFormControl" placeholder="Ex. 000.000.000-00" mask="000.000.000-00||00.000.000/0000-00">
                     <mat-error *ngIf="cpfFormControl.hasError('text') && !cpfFormControl.hasError('required')">
                     Please enter a valid email address
                     </mat-error>
