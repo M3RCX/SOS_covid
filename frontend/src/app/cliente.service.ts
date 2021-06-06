@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs'; // RxJS 
+import { Subject } from 'rxjs'; // RxJS
 import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente.model';
 import { Clinica } from './clinica.model'
@@ -17,7 +17,16 @@ export class ClienteService {
         };
         this.httpClient.post<{
             clientes: Cliente []
-        }>('http://localhost:3000/login', cliente )
+        }>('http://localhost:5000/login', cliente )
+
+        this.httpClient.get<{
+          clientes: Cliente []
+          }>('http://localhost:5000/login-consulta').subscribe(
+              (dados) => {
+                  this.clientes = dados.clientes;
+                  console.log(this.clientes);
+              }
+          )
     }
 
 
@@ -36,7 +45,7 @@ export class ClienteService {
             senha: senha
         }
 
-        this.httpClient.post<{mensagem: string}>('http://localhost:3000/cadastro-cliente', cliente)
+        this.httpClient.post<{mensagem: string}>('http://localhost:1000/cliente-cadastrado', cliente)
 
     }
 
@@ -55,7 +64,7 @@ export class ClienteService {
         }
 
         this.httpClient.post<{mensagem: string}>('http://localhost:3000/cadastro-clinica', clinica)
-    
+
     }
 /*
       //Método para que outros componentes possam observar p 'listaClientesAtualizada'

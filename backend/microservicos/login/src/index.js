@@ -19,8 +19,8 @@ app.post('/login', function (req, res) {
     let senha = req.body.senha; //Senha vinda do formulário de login
 
     
-        cliente.findAll(cpf, senha).then((clientes) => {
-            for (int = 0; i < clientes.lenght; i++) {
+        cliente.findAll({attributes:['cpf', 'senha' ]}).then((clientes) => {
+            for (i = 0; i < clientes.length; i++) {
                 if (cpf == clientes[i].cpf && senha == clientes[i].senha) {
                     console.log('Bem-Vindo');
                 } else {
@@ -29,5 +29,14 @@ app.post('/login', function (req, res) {
             }
         })
 });
+
+app.get('/login-consulta', function (req, res, next) {
+    cliente.findAll().then(dados => {
+        res.status(200).json({
+            mensagem: "Tudo Ok",
+            clientes: dados
+        });
+    })
+})
 
 app.listen(5000);
