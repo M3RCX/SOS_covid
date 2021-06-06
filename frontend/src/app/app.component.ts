@@ -1,3 +1,4 @@
+import { AuthService } from './views/login/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SOS covid';
+
+  mostrarMenu: boolean = false;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe()
+  }
 }

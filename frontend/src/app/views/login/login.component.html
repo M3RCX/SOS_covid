@@ -17,31 +17,21 @@
     <mat-grid-tile>
 
         <div class="divider2 col-4 ">
-            <form>
+            
                 <mat-form-field>
                     <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" matInput [formControl]="cpfFormControl" placeholder="Ex. 000.000.000-00">
-                    <mat-error *ngIf="cpfFormControl.hasError('text') && !cpfFormControl.hasError('required')">
-                    Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="cpfFormControl.hasError('required')">
-                    Email is <strong>required</strong>
-                    </mat-error>
+                    <input type="text" ngDefaultControl name="cpf" matInput placeholder="Ex. 000.000.000-00" [(ngModel)]="login.cpf">
                 </mat-form-field>
                 
                 <mat-form-field>
                     <mat-label for="loginPassword" class="">Senha</mat-label>
-                    <input matInput [formControl]="senhaFormControl" [type]="hide ? 'password' : 'text'">
-                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <input name="senha" ngDefaultControl matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="login.senha">
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <mat-error *ngIf="senhaFormControl.hasError('required')">
-                        senha is <strong>required</strong>
-                    </mat-error>
                 </mat-form-field>
 
-                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
-            </form>
+                <button type="submit" mat-raised-button color="primary" class="" (click)="fazerLogin()">Login</button>
         </div>
     </mat-grid-tile>
            

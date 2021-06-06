@@ -4,7 +4,7 @@ import { Subject } from 'rxjs'; // RxJS
 import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente.model';
 import { Clinica } from './clinica.model'
-import { Login } from './Login.model';
+import { Login } from './views/login/Login.model';
 @Injectable( {providedIn: 'root'} )
 export class ClienteService {
     @Input() clientes: Cliente[] = []

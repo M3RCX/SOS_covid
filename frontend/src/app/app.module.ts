@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NgxMaskModule } from 'ngx-mask';
-import { StorageService } from './services/storage.service';
+// import { StorageService } from './services/storage.service';
 
 
 
@@ -35,6 +35,7 @@ import { CreateAgendamentoComponent } from './components/agendamento/create-agen
 import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { AuthService } from './views/login/auth.service';
 
 
 
@@ -50,8 +51,7 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     CreateAgendamentoComponent,
     LoginComponent,
     CadastroComponent,
-    NgxMaskModule,
-    StorageService 
+    // StorageService 
     
   ],
   imports: [
@@ -78,7 +78,7 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
       dropSpecialCharacters: false
     })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
