@@ -32,32 +32,49 @@ export class CadastroComponent implements OnInit {
   navigateToHome(): void{
     this.router.navigate(['/']);
   }
- 
-    
-    adicionarCliente(form: NgForm) {
-      console.log("esta me acionando")
-      this.clienteService.adicionarCliente(
-        //Nome, fone e email são parâmetros eles estão dentro do parênteses
-        form.value.nome,
-        form.value.cpf,
-        form.value.email,
-        form.value.telefone,
-        form.value.cep,
-        form.value.rua,
-        form.value.bairro,
-        form.value.complemento,
-        form.value.numero,
-        form.value.senha
-        );
-        console.log(form.value.nome,
-          form.value.cpf,
-          form.value.email,
-          form.value.telefone,
-          form.value.cep,
-          form.value.rua,
-          form.value.bairro,
-          form.value.numero,
-          form.value.complemento,
-          form.value.senha)
+
+    adicionarCliente(clienteForm) {
+      //console.log("esta me acionando")
+
+      this.clienteService.adicionarCliente  (
+        clienteForm.value.nome,
+         clienteForm.value.cpf,
+         clienteForm.value.email,
+         clienteForm.value.telefone,
+         clienteForm.value.cep,
+         clienteForm.value.rua,
+         clienteForm.value.bairro,
+         clienteForm.value.numero,
+         //clienteForm.value.complemento,
+         clienteForm.value.senha
+      )
+
+      const nome = clienteForm.value.nome;
+      const cpf = clienteForm.value.cpf;
+      const email = clienteForm.value.email;
+      const telefone = clienteForm.value.telefone;
+      const cep = clienteForm.value.cep;
+      const rua = clienteForm.value.rua;
+      const bairro = clienteForm.value.bairro;
+      //const complemento = clienteForm.value.complemento;
+      const numero = clienteForm.value.numero;
+      const senha = clienteForm.value.senha;
+
+
+        console.log((`Nome: ${nome}, cpf: ${cpf}, Email: ${email}, Telefone: ${telefone},
+        Cep: ${cep}, Rua: ${rua}, Bairro: ${bairro}, Numero: ${numero},
+        Senha: ${senha}`))
+
+        /*console.log((`Nome: ${nome}, cpf: ${cpf}, Email: ${email}, Telefone: ${telefone},
+        Cep: ${cep}, Rua: ${rua}, Bairro: ${bairro}, Complemento: ${complemento}, Numero: ${numero},
+        Senha: ${senha}`))*/
+
+      /*adicionarCliente(clienteForm) {
+
+        console.log(`Nome: ${nome}, cpf: ${cpf}, Email: ${email}, Telefone: ${telefone},
+        Cep: ${cep}, Rua: ${rua}, Bairro: ${bairro}, Complemento: ${complemento}, Numero: ${numero},
+        Senha: ${senha}`)}*/
+
       }
-  }
+
+    }

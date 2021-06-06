@@ -35,8 +35,20 @@ export class ClienteService {
             }
         )*/
     }
-    adicionarCliente (nome: string, cpf: string, email: string, telefone: string, cep: string, rua: string, bairro: string, numero: string, complemento: string, senha: string) {
+    adicionarCliente (nome: string, cpf: string, email: string, telefone: string, cep: string, rua: string, bairro: string, numero: string,
+      senha: string) {
 
+      console.log(
+        nome,
+        cpf,
+        email,
+        telefone,
+        cep,
+        rua,
+        bairro,
+        numero,
+
+        senha)
         const cliente: Cliente = {
             nome: nome,
             cpf: cpf,
@@ -46,7 +58,6 @@ export class ClienteService {
             rua: rua,
             bairro: bairro,
             numero: numero,
-            complemento: complemento,
             senha: senha
         }
 

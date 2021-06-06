@@ -16,14 +16,14 @@ import { MatInputModule } from '@angular/material/input'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NgxMaskModule } from 'ngx-mask';
-import { StorageService } from './services/storage.service';
+//import { StorageService } from './services/storage.service';
 
 
 
@@ -49,11 +49,9 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     AgendamentoComponent,
     CreateAgendamentoComponent,
     LoginComponent,
-    CadastroComponent,
-    NgxMaskModule,
-    StorageService 
-    
+    CadastroComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -74,6 +72,7 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    //StorageService,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     })

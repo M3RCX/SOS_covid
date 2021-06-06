@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize('sos', 'root', 'quarteto123', {
+const sequelize = new Sequelize('sos', 'root', 'Pscrafa20mysql', {
     host: 'localhost',
     dialect: 'mysql',//indicando qual é o banco de dados nesse caso é o MySQL.
     define: {
