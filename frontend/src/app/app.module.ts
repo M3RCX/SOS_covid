@@ -22,6 +22,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { NgxMaskModule } from 'ngx-mask';
+import { StorageService } from './services/storage.service';
 
 
 
@@ -48,6 +50,8 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     CreateAgendamentoComponent,
     LoginComponent,
     CadastroComponent,
+    NgxMaskModule,
+    StorageService 
     
   ],
   imports: [
@@ -69,7 +73,10 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     MatSnackBarModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

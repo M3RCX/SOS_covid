@@ -3,7 +3,7 @@ const cliente = require('../../cadastro/src/cliente');
 const app = express();
 app.use(express.json());
 
-app.use( 
+app.use(
     (req, res, next) => {
 
         res.setHeader('Access-Control-Allow-Origin', "*");
@@ -14,29 +14,42 @@ app.use(
 });
 
 
-app.post('/login', function (req, res) {
+app.post('/login', function (req, res, next) {
     let cpf = req.body.cpf; //CPF vindo do formulário de login
     let senha = req.body.senha; //Senha vinda do formulário de login
-
+//{attributes:['cpf, senha']}
+//cpf == clientes[i].cpf && senha == clientes[i].senha
     
         cliente.findAll({attributes:['cpf', 'senha' ]}).then((clientes) => {
-            for (i = 0; i < clientes.length; i++) {
+            for (i= 0; i < clientes.length; i++) {
                 if (cpf == clientes[i].cpf && senha == clientes[i].senha) {
+                    
                     console.log('Bem-Vindo');
                 } else {
-                    res.end("Usuário ou senha não existe")
+                    console.log("Usuário ou senha não existe")
                 }
             }
-        })
+        }) 
+        cliente.findAll({where:{ cpf: cpf}}).then(dados => {
+            res.status(200).json({
+                mensagem: "Tudo Ok",
+                clientes: dados
+            });
+        }).catch(function (erro) {
+            console.log("Não foi possível consultar o banco" + erro);
+        });
+
+       
 });
 
-app.get('/login-consulta', function (req, res, next) {
+/*
+app.get('/login', function (req, res, next) {
     cliente.findAll().then(dados => {
         res.status(200).json({
             mensagem: "Tudo Ok",
             clientes: dados
         });
     })
-})
+})*/
 
 app.listen(5000);

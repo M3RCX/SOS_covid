@@ -1,3 +1,4 @@
+import { Component, Input, Output } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs'; // RxJS
 import { HttpClient } from '@angular/common/http';
@@ -6,7 +7,7 @@ import { Clinica } from './clinica.model'
 import { Login } from './Login.model';
 @Injectable( {providedIn: 'root'} )
 export class ClienteService {
-    private clientes: Cliente[] = []
+    @Input() clientes: Cliente[] = []
     private clinicas: Clinica[] = []
     constructor(private httpClient: HttpClient) { }
 
@@ -17,19 +18,23 @@ export class ClienteService {
         };
         this.httpClient.post<{
             clientes: Cliente []
-        }>('http://localhost:5000/login', cliente )
+        }>('http://localhost:5000/login', cliente ).subscribe(
+            (dados) => {
+                this.clientes = dados.clientes;
+                console.log(this.clientes);
+                window.localStorage.setItem("localstorage", JSON.stringify(this.clientes))
+            }
+        )
 
-        this.httpClient.get<{
-          clientes: Cliente []
-          }>('http://localhost:5000/login-consulta').subscribe(
-              (dados) => {
-                  this.clientes = dados.clientes;
-                  console.log(this.clientes);
-              }
-          )
+       /* this.httpClient.get<{
+        clientes: Cliente []
+        }>('http://localhost:5000/login').subscribe(
+            (dados) => {
+                this.clientes = dados.clientes;
+                console.log(this.clientes);
+            }
+        )*/
     }
-
-
     adicionarCliente (nome: string, cpf: string, email: string, telefone: string, cep: string, rua: string, bairro: string, numero: string, complemento: string, senha: string) {
 
         const cliente: Cliente = {
@@ -63,7 +68,7 @@ export class ClienteService {
             senha: senha
         }
 
-        this.httpClient.post<{mensagem: string}>('http://localhost:3000/cadastro-clinica', clinica)
+        this.httpClient.post<{mensagem: string}>('http://localhost:1000/cadastro-clinica', clinica)
 
     }
 /*
