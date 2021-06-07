@@ -25,7 +25,7 @@ export class ClienteService {
           verticalPosition: "top"
         })
     }
-
+//O observable é um via de mão dupla
     loginCliente(login: Login): Observable<Login> {
         return this.httpClient.post<Login>(this.loginUrl, login )
     }

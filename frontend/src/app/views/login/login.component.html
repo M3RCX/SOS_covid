@@ -6,34 +6,21 @@
         Sistema para agendamento de vacinas em casa, faça seu login!
     </mat-card-subtitle>
 </mat-card>
-<mat-grid-list cols="2" rowHeight="36.5rem">
-    <mat-grid-tile>
-    
-        <div class="dvider1 col-4 offset-2">
-            <span><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
-            <button mat-raised-button color="primary" (click)="navigateToCadastro()" class="btn--cadastro" >Cadastre-se</button>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
+<div class="container">
+    <form>
+      <div class="row">
+            <div class="form-group col-md-6 col-12">
+                <label for="senha">CPF</label>
+                <input type="cpf" class="form-control" name="senha" id="senha" placeholder="XXX.XXX.XXX-XX"  [(ngModel)]="login.cpf" mask="000.000.000-00||00.000.000/0000-00"/>
+            </div>
 
-        <div class="divider2 col-4 ">
-            <form #loginForm="ngForm">
-                <mat-form-field>
-                    <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00||00.000.000/0000-00" ([ngModel])="login.cpf">
-                </mat-form-field>
-                
-                <mat-form-field>
-                    <mat-label for="loginPassword" class="">Senha</mat-label>
-                    <input matInput  [type]="hide ? 'password' : 'text'" class="form-control" ([ngModel])="login.senha">
-                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
-
-                <button type="submit" (click)="loginCliente()"  mat-raised-button color="primary" class="last-object" >Login</button>
-            </form>
+            <div class="form-group col-md-6 col-12">
+                <label for="senha">Senha</label>
+                <input type="cpf" class="form-control" name="senha" id="senha" placeholder="senha" [(ngModel)]="login.senha"/>
+            </div>
         </div>
-    </mat-grid-tile>
-           
-</mat-grid-list>
+    </form>
+    <button mat-raised-button (click)="loginCliente()" color="primary" class="last-object" >
+      Login
+    </button>
+</div>

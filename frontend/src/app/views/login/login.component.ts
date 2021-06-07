@@ -11,9 +11,6 @@ import {  Login } from 'src/app/Login.model';
 })
 export class LoginComponent implements OnInit {
 
-  
-  cpf : ''
-  senha : ''
 
   login: Login = {
     cpf : '',
