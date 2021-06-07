@@ -36,6 +36,8 @@ export class CadastroComponent implements OnInit {
     senha : ''
   }
 
+    
+
   constructor (public clienteService: ClienteService,
     private router: Router) {
 

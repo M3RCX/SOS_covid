@@ -20,7 +20,7 @@
             <form #loginForm="ngForm">
                 <mat-form-field>
                     <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" name="cpf" class="form-control" id="LoginCpf" matInput placeholder="Ex. 000.000.000-00" ([ngModel])="login.cpf">
+                    <input type="text" matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00||00.000.000/0000-00" ([ngModel])="login.cpf">
                 </mat-form-field>
                 
                 <mat-form-field>
