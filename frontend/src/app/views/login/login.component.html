@@ -17,21 +17,21 @@
     <mat-grid-tile>
 
         <div class="divider2 col-4 ">
-            <form>
+            <form #loginForm="ngForm">
                 <mat-form-field>
                     <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" matInput placeholder="Ex. 000.000.000-00">
+                    <input type="text" name="cpf" class="form-control" id="LoginCpf" matInput placeholder="Ex. 000.000.000-00" ([ngModel])="login.cpf">
                 </mat-form-field>
                 
                 <mat-form-field>
                     <mat-label for="loginPassword" class="">Senha</mat-label>
-                    <input matInput  [type]="hide ? 'password' : 'text'">
+                    <input matInput  [type]="hide ? 'password' : 'text'" class="form-control" ([ngModel])="login.senha">
                     <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
 
-                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
+                <button type="submit" (click)="loginCliente()"  mat-raised-button color="primary" class="last-object" >Login</button>
             </form>
         </div>
     </mat-grid-tile>

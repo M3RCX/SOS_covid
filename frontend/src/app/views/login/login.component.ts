@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { ClienteService } from '../../../app/cliente.service';
 import { Router } from '@angular/router'
+import {  Login } from 'src/app/Login.model';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,17 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  
+  cpf : ''
+  senha : ''
+
+  login: Login = {
+    cpf : '',
+    senha : ''
+  }
+  
+
+  constructor(public clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,4 +40,13 @@ export class LoginComponent implements OnInit {
   senhaFormControl = new FormControl('', [
     Validators.required,
   ]);
+
+  loginCliente(): void {
+    console.log(this.login);
+    this.clienteService.loginCliente(this.login).subscribe(() =>{
+      this.clienteService.showMessage('Login feito com sucesso')
+      this.router.navigate(['/login'])
+    })
+
+  }
 }
