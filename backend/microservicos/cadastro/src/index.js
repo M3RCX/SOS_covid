@@ -44,6 +44,9 @@ app.post('/cliente-cadastrado', function (req, res) {
     senha: req.body.senha
   }).then(function () {
     res.redirect('/http://localhost:4200'); //Redireciona o usuário cadastrado para a tela inicial
+    res.status(200).json({
+      mensagem: "Tudo Ok",
+    });
     console.log("Usuário cadastrado");
   }).catch(function (erro) {
     console.log("Não foi possível cadastrar o usuário " + erro);

@@ -42,6 +42,7 @@ export class ClienteService {
     }
     createCliente (cliente:Cliente):Observable<Cliente> {
         return this.httpClient.post<Cliente>(this.cadastradoUrl, cliente)
+        
     }
     
     adicionarClinica (nome: string, cnpj: number, email: string, telefone: number, cep: string, rua: string, bairro: string, numero: string, complemento: string, senha: string) {
