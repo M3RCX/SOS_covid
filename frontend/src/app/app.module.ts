@@ -28,6 +28,7 @@ import { NgxMaskModule } from 'ngx-mask';
 
 
 
+
 //import das pages e components
 import { HomeComponent } from './views/home/home.component';
 import { AgendamentoComponent } from './views/agendamento/agendamento.component';
@@ -38,7 +39,6 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common'
 

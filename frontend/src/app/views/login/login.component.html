@@ -6,16 +6,14 @@
         Sistema para agendamento de vacinas em casa, faça seu login!
     </mat-card-subtitle>
 </mat-card>
-<mat-grid-list cols="2" rowHeight="36.5rem">
-    <mat-grid-tile>
-    
-        <div class="dvider1 col-4 offset-2">
-            <span><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
+    <div class="container container-login">
+
+        <div class="divider1 col-4">
+            <span class="logo"><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
             <button mat-raised-button color="primary" (click)="navigateToCadastro()" class="btn--cadastro" >Cadastre-se</button>
         </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-
+        
+        
         <div class="divider2 col-4 ">
             <form>
                 <mat-form-field>
@@ -30,10 +28,9 @@
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
-
-                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
+                
             </form>
+                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
         </div>
-    </mat-grid-tile>
-           
-</mat-grid-list>
+    </div>
+  
