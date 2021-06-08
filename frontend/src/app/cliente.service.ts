@@ -14,6 +14,7 @@ export class ClienteService {
     private clinicas: Clinica[] = []
 
     cadastradoUrl= "http://localhost:1000/cliente-cadastrado"
+    loginUrl = "http://localhost:5000/login"
 
     constructor(private httpClient: HttpClient, private snackBar: MatSnackBar) { }
 
@@ -24,25 +25,12 @@ export class ClienteService {
           verticalPosition: "top"
         })
     }
-
-    logarCliente(cpf: string, senha: string): void {
-        const cliente: Login = {
-            cpf: cpf,
-            senha: senha,
-        };
-        this.httpClient.post<{
-            clientes: Cliente []
-        }>('http://localhost:5000/login', cliente ).subscribe(
-            (dados) => {
-                this.clientes = dados.clientes;
-                console.log(this.clientes);
-                window.localStorage.setItem("localstorage", JSON.stringify(this.clientes))
-            }
-        )
+//O observable é um via de mão dupla
+    loginCliente(login: Login): Observable<Login> {
+        return this.httpClient.post<Login>(this.loginUrl, login )
     }
     createCliente (cliente:Cliente):Observable<Cliente> {
         return this.httpClient.post<Cliente>(this.cadastradoUrl, cliente)
-        
     }
     
     adicionarClinica (nome: string, cnpj: number, email: string, telefone: number, cep: string, rua: string, bairro: string, numero: string, complemento: string, senha: string) {

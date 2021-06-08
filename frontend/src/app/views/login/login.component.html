@@ -1,36 +1,34 @@
 <mat-card>
-    <mat-card-title>
-        Bem vindo!
-    </mat-card-title>
-    <mat-card-subtitle>
-        Sistema para agendamento de vacinas em casa, faça seu login!
-    </mat-card-subtitle>
+  <mat-card-title>
+    Bem vindo!
+  </mat-card-title>
+  <mat-card-subtitle>
+    Sistema para agendamento de vacinas em casa, faça seu login!
+  </mat-card-subtitle>
 </mat-card>
-    <div class="container container-login">
 
-        <div class="divider1 col-4">
-            <span class="logo"><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
-            <button mat-raised-button color="primary" (click)="navigateToCadastro()" class="btn--cadastro" >Cadastre-se</button>
-        </div>
-        
-        
-        <div class="divider2 col-4 ">
-            <form>
-                <mat-form-field>
-                    <mat-label for="LoginCpf" class="">CPF</mat-label>
-                    <input type="text" matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00||00.000.000/0000-00">
-                </mat-form-field>
-                
-                <mat-form-field>
-                    <mat-label for="loginPassword" class="">Senha</mat-label>
-                    <input matInput  [type]="hide ? 'password' : 'text'">
-                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
-                
-            </form>
-                <button type="submit" mat-raised-button color="primary" class="" >Login</button>
-        </div>
+<div class="container container-login">
+
+  <div class="divider1 ">
+    <span class="logo"><img src="../../../../assets/img/android-chrome-192x192.png" alt=""></span>
+    <button mat-raised-button color="primary" (click)="navigateToCadastro()" class="btn--cadastro">Cadastre-se</button>
+  </div>
+
+  <form>
+    <div class="divider2">
+      <div class="form-group">
+        <label for="senha">CPF</label>
+        <input type="cpf" class="form-control" name="senha" id="senha" placeholder="XXX.XXX.XXX-XX"
+          [(ngModel)]="login.cpf" mask="000.000.000-00||00.000.000/0000-00" />
+      </div>
+
+      <div class="form-group ">
+        <label for="senha">Senha</label>
+        <input type="cpf" class="form-control" name="senha" id="senha" placeholder="senha" [(ngModel)]="login.senha" />
+      </div>
     </div>
-  
+  </form>
+  <button mat-raised-button (click)="loginCliente()" color="primary" class="last-object">
+    Login
+  </button>
+</div>

@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NgxMaskModule } from 'ngx-mask';
+import {MatFormFieldModule} from '@angular/material/form-field'
 //import { StorageService } from './services/storage.service';
 
 
@@ -79,6 +80,7 @@ registerLocaleData(localePt);
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatFormFieldModule,
     //StorageService,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false

@@ -17,6 +17,7 @@ app.use(
 app.post('/login', function (req, res, next) {
     let cpf = req.body.cpf; //CPF vindo do formulário de login
     let senha = req.body.senha; //Senha vinda do formulário de login
+    console.log(cpf, senha);
 //{attributes:['cpf, senha']}
 //cpf == clientes[i].cpf && senha == clientes[i].senha
     
