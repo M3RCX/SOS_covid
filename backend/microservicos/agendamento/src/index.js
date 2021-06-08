@@ -1,4 +1,5 @@
 const express = require('express');
+const { sequelize } = require('../../db');
 const agenda = require('./agenda');
 const app = express();
 app.use(express.json());
@@ -19,7 +20,9 @@ app.post('/agendamento', function (req, res) {
         street: req.body.street,
         name: req.body.name
     }).then(function () {
-        res.redirect('/');
+        res.status(200).json({
+        mensagem: "Tudo Ok",
+      });
         console.log("Agendado com sucesso!");
     }).catch(function (erro) {
         console.log("Falha ao agendar" + erro);
@@ -27,15 +30,15 @@ app.post('/agendamento', function (req, res) {
 });
 
 //get
-app.get('/agendamento', function (req, res) { //caminho do formulário de cadastro de usuarios
-    agenda.findAll().then((agendamento) => {
-        res.status(200).jsonp({
-           
-            agenda:agendamento 
-        })
-        
-        console.log("alou");
+app.get('/agendamento', function(req, res) {
+    sequelize.sync()
+    .then(function() {
+      return agenda.findAll();
     })
+    .then(function(agendamento) {
+      res.json(agendamento);
+       console.log(JSON.stringify(agendamento));
+     })
   });
 
 app.listen(1200);
