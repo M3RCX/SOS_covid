@@ -1,6 +1,6 @@
 export interface Agendamento {
     id?: number
-    name: string
+    name?: string
     date: string
-    street: string
+    street?: string
 }
