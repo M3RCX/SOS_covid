@@ -2,20 +2,14 @@ const db = require('./db');
 
 const agenda = db.sequelize.define('agenda'/*Nome da tabela de dados*/, {
     dia: {
-        type: db.Sequelize.INT
-    },
-    mes: {
         type: db.Sequelize.STRING
     },
-    ano: {
-        type: db.Sequelize.INT
-    },
-    semana: {
+    name: {
         type: db.Sequelize.STRING
     },
-    hora: {
+    street: {
         type: db.Sequelize.STRING
-    }
+    },
 });
 
 module.exports = agenda;
