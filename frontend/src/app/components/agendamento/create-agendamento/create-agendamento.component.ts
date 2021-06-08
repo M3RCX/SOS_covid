@@ -14,7 +14,7 @@ export class CreateAgendamentoComponent implements OnInit {
   agendamento: Agendamento = {
     
     name: '',
-    date: '',
+    data: '',
     street: ''
     
   }

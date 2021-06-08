@@ -1,0 +1,48 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-divider_1{
+    width: 50%;
+}
+
+.home-divider_2{
+    width: 50%;
+    
+}
+
+.container-home{
+    height: auto;
+    margin-top: 15px;
+}
+
+.lista-item{
+    height: auto;
+}
+
+@media (max-width: 600px){
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-divider_1{
+        width: 100%;
+    }
+
+    .home-divider_1 img{
+        width: 100%;
+    }
+    
+    .home-divider_2{
+        width: 100%;
+        
+    }
+    
+    .container-home{
+        height: auto;
+        margin-top: 15px;
+    }
+    
+}

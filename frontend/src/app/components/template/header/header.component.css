@@ -17,6 +17,11 @@
     padding-left: 15px;
 }
 
-.header .title-group i{
+.header .title-group i, .header .user-login i {
     padding-right: 5px;
+}
+
+.header .user-login{
+    position: absolute;
+    right: 25px;
 }

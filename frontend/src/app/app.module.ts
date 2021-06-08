@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 //import dos modulos
@@ -16,12 +16,16 @@ import { MatInputModule } from '@angular/material/input'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { NgxMaskModule } from 'ngx-mask';
+import {MatFormFieldModule} from '@angular/material/form-field'
+//import { StorageService } from './services/storage.service';
+
 
 
 
@@ -33,9 +37,13 @@ import { CreateAgendamentoComponent } from './components/agendamento/create-agen
 import { LoginComponent } from './views/login/login.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { AgendamentoReadComponent } from './components/agendamento/agendamento-read/agendamento-read.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common'
 
-
-
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -48,8 +56,10 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     CreateAgendamentoComponent,
     LoginComponent,
     CadastroComponent,
+    AgendamentoReadComponent
     
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -69,9 +79,17 @@ import { CadastroComponent } from './views/cadastro/cadastro.component';
     MatSnackBarModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    //StorageService,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    })
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-br'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
