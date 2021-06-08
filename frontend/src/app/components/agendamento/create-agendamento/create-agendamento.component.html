@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-title>
+    Agendamento de vacina
+  </mat-card-title>
+  <mat-card-subtitle>
+    agende sua vacina
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <form>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="" name="name" [(ngModel)]="agendamento.name">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Data do agendamento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="agendamento.data" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Rua</mat-label>
+        <input matInput placeholder="" name="street" [(ngModel)]="agendamento.street">
+      </mat-form-field>
+
+    </form>
+
+  </mat-card-content>
+
+  <button mat-raised-button color="primary" (click)="createAgendamento()">Confirmar</button>
+  <button mat-raised-button color="secundary" (click)="cancelarAgendamento()">Cancelar</button>
+
+</mat-card>

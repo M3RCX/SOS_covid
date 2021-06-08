@@ -7,7 +7,7 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
+---------------------------------------------------------
 -- Schema sos
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `sos` ;
@@ -25,15 +25,10 @@ DROP TABLE IF EXISTS `sos`.`agendamentos` ;
 
 CREATE TABLE IF NOT EXISTS `sos`.`agendamentos` (
   `idagendamento` INT NOT NULL AUTO_INCREMENT,
-  `data` VARCHAR(45) NOT NULL,
-  `idcliente` INT NOT NULL,
-  PRIMARY KEY (`idagendamento`),
-  INDEX `fk_idcliente_idx` (`idcliente` ASC) VISIBLE,
-  CONSTRAINT `fk_idcliente`
-    FOREIGN KEY (`idcliente`)
-    REFERENCES `sos`.`clientes` (`idcliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `date` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `street` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idagendamento`))
 ENGINE = InnoDB;
 
 
