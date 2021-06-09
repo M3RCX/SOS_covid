@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cliente = require("./cliente");
 const clinica = require("./clinica");
-const sequelize = require('./db');
+const sequelize = require('../../db');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -43,7 +43,7 @@ app.post('/cliente-cadastrado', function (req, res) {
     bairro: req.body.bairro,
     senha: req.body.senha
   }).then(function () {
-    res.redirect('/http://localhost:4200'); //Redireciona o usuário cadastrado para a tela inicial
+    res.redirect('/'); //Redireciona o usuário cadastrado para a tela inicial
     /*res.status(200).json({
       mensagem: "Tudo Ok",
     });*/

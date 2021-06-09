@@ -25,15 +25,10 @@ DROP TABLE IF EXISTS `sos`.`agendamentos` ;
 
 CREATE TABLE IF NOT EXISTS `sos`.`agendamentos` (
   `idagendamento` INT NOT NULL AUTO_INCREMENT,
-  `data` VARCHAR(45) NOT NULL,
-  `idcliente` INT NOT NULL,
-  PRIMARY KEY (`idagendamento`),
-  INDEX `fk_idcliente_idx` (`idcliente` ASC) VISIBLE,
-  CONSTRAINT `fk_idcliente`
-    FOREIGN KEY (`idcliente`)
-    REFERENCES `sos`.`clientes` (`idcliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `date` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `street` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idagendamento`))
 ENGINE = InnoDB;
 
 

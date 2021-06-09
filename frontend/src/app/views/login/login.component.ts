@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     console.log(this.login);
     this.clienteService.loginCliente(this.login).subscribe(() =>{
       this.clienteService.showMessage('Login feito com sucesso')
-      this.router.navigate(['/login'])
+      this.router.navigate(['/'])
     })
 
   }
